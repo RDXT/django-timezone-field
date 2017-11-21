@@ -21,7 +21,7 @@ def find_version(*file_paths):
 
 
 setup(
-    name='ambition-django-timezone-field',
+    name='django-timezone-field',
     version=find_version('timezone_field', '__init__.py'),
     author='Mike Fogel',
     author_email='mike@fogel.ca',
