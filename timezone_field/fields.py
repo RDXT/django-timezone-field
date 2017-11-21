@@ -110,7 +110,8 @@ class TimeZoneField(models.Field):
         # allow defaults to be still specified as strings. Allows for easy
         # serialization into migration files
         value = super(TimeZoneField, self).get_default()
-        return self._get_python_and_db_repr(value)[0]
+        return (pytz.timezone(value), value)[0]
+        # return self._get_python_and_db_repr(value)[0]
 
     def from_db_value(self, value, expression, connection, context):
         "Convert to pytz timezone object"
